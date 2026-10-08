@@ -1,0 +1,56 @@
+//////////////////////////////////////////////////
+///  PlutoT6 ZM ServerConfiguration file        //
+//////////////////////////////////////////////////
+
+///////////////////////////////////////////////////
+// GRUBS SETTINGS                                //
+///////////////////////////////////////////////////
+set smoked_api_token "12345"                     //
+set smoked_api_endpoint "http://localhost/api/"  //
+///////////////////////////////////////////////////
+
+//////////////////////////////////////////////////
+// GENERAL SETTINGS                             //
+////////////////////////////////////////////////// 
+sv_maxclients 4                                 //
+gts zmDifficulty 1                              //
+demo_enabled 0                                  //
+sv_sayname ""                                   //
+sv_voice "1"                                    //
+sv_voicequality "3"                             //
+sv_allowAimAssist 1                             //
+sv_replaceBots 1                                //
+g_zm_fix_damage_overflow 1                      //
+g_playerCollision 0                             //
+g_playerEjection 0                              // 
+bullet_penetration_affected_by_team 1           // 
+g_fixBulletDamageDupe 0                         //
+g_patchRocketJumps 1                            //
+//////////////////////////////////////////////////
+
+//////////////////////////////////////////////////
+// B3, IW4MADMIN, GAME LOG & RCON SETTINGS      //
+//////////////////////////////////////////////////
+g_logSync 2                                     // 
+g_log "logs\games_zm.log"                       //
+rcon_password "weston123"                       //
+rcon_rate_limit "500"                           // 
+rcon_localhost_bypass 1                         // 
+rcon_prints 0                                   // 
+rconWhitelistAdd "127.0.0.1"                    //
+rconWhitelistAdd "192.168.0.7"                  // 
+rconWhitelistAdd "10.0.0.12"                    //
+rconWhitelistAdd "172.16.8.7"                   //
+//////////////////////////////////////////////////
+
+//////////////////////////////////////////////////
+// MOD SETTINGS                                 //
+//////////////////////////////////////////////////
+// Change fs_game through the batch file        //
+// or your launch parameters.                   //
+seta sv_wwwBaseURL ""                           //
+//////////////////////////////////////////////////
+
+// Map Rotation
+sv_maprotation "execgts zm_standard_town.cfg map zm_transit"
+
