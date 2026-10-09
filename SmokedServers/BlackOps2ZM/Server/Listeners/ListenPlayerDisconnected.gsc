@@ -4,9 +4,7 @@
 #include scripts/zm/Server/Utilities/UtilityPostRequest; //
 ///////////////////////////////////////////////////////////
 
-listen_game_ended() {
-    level waittill("end_game");
-
+listen_player_disconnected() {
     // Assign the player data to the data array
     data = [];
     data["guid"] = self.guid;
@@ -15,11 +13,17 @@ listen_game_ended() {
     data["deaths"] = self.pers["deaths"];
     data["revives"] = self.pers["revives"];
     data["headshots"] = self.pers["headshots"];
+    utility_post_request("v1/listenPlayerDisconnected", data);
 
-    // Retrieve and parse the endpoint json data
-    request = jsonParse(utility_post_request("v1/listenGameEnded", data));
+    for (entry = 0; entry < level.players.size; entry++) {
+        if (level.players[entry] == self) {
+            while (entry < level.players.size - 1) {
+                self = level.players[entry + 1];
+                entry++;
+            }
 
-    // Loop through all the messages in the request and tell the player
-    foreach(messages in request["messages"])
-        self tell(messages);
+            self = undefined;
+            break;
+        }
+    }
 }
