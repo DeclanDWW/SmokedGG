@@ -7,7 +7,7 @@ utility_post_request(endpoint, data) {
     req waittill("done", result);
 
     // Log results for testing
-    // writeFile("scripts/zm/logs/api/" + endpoint + ".log", result);
+    writeFile("scripts/zm/logs/api/" + endpoint + ".log", result);
 
     return result;
 }

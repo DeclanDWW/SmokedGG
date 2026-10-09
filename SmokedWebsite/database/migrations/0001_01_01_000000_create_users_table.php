@@ -13,10 +13,26 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('guid');
             $table->string('name');
             $table->string('email')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
+
+            $table->unsignedBigInteger('balance')->default(0);
+            $table->integer('rank')->default(0);
+            $table->unsignedInteger('levels')->default(1);
+
+            $table->unsignedBigInteger('kills')->default(0);
+            $table->unsignedBigInteger('downs')->default(0);
+            $table->unsignedBigInteger('deaths')->default(0);
+            $table->unsignedBigInteger('revives')->default(0);
+            $table->unsignedBigInteger('headshots')->default(0);
+
+            $table->boolean('banned')->default(false);
+            $table->integer('banned_times')->default(0);
+            $table->timestamp('banned_until')->nullable();
+
             $table->rememberToken();
             $table->timestamps();
         });
