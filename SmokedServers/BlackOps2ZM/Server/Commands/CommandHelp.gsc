@@ -19,7 +19,7 @@ command_help(args) {
     }
 
     // Loop through and tell player the messages from the request
-    foreach(messages as request["messages"]) {
+    foreach(messages in request["messages"]) {
         self tell(messages);
     }
 }

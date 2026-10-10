@@ -10,6 +10,8 @@ Route::middleware('api.auth')->group(function () {
     Route::post('/v1/listenPlayerDisconnected', [BlackOps2ZMController::class, 'listenPlayerDisconnected']);
 
     // Commands
+    Route::post('/v1/commandDeposit', [BlackOps2ZMController::class, 'commandDeposit']);
     Route::post('/v1/commandGodmode', [BlackOps2ZMController::class, 'commandGodmode']);
     Route::post('/v1/commandHelp', [BlackOps2ZMController::class, 'commandHelp']);
+    Route::post('/v1/commandWithdraw', [BlackOps2ZMController::class, 'commandWithdraw']);
 });

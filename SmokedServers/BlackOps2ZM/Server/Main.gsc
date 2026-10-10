@@ -1,8 +1,8 @@
 /////////////////////////////////////////////////////////////////
 // Include Event Scripts                                       //
 /////////////////////////////////////////////////////////////////
-#include scripts/zm/Server/Listeners/ListedPlayerDisconnected; //
-#include scripts/zm/Server/Listeners/ListedScore;              //
+#include scripts/zm/Server/Listeners/ListenPlayerDisconnected; //
+#include scripts/zm/Server/Listeners/ListenScore;              //
 /////////////////////////////////////////////////////////////////
 
 main() {
