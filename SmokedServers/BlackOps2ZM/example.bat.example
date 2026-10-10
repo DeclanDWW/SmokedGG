@@ -1,10 +1,10 @@
 @echo off
 ::Paste the server key from https://platform.plutonium.pw/serverkeys here
-set key=YVeihyzC1Cr1aCXY52dbgOj9mFAFkakY
+set key=YOUR_KEY_HERE
 ::Name of the config file the server should use. (default: dedicated_zm.cfg)
-set cfg=town.cfg
+set cfg=EXAMPLE.CFG.EXAMPLE
 ::Name of the server shown in the title of the cmd window. This will NOT bet shown ingame.
-set name=Town
+set name=YOUR_SERVER_NAME
 ::Port used by the server (default: 4976)
 set port=4978
 ::Mod name (default "")
@@ -18,7 +18,7 @@ echo Server "%name%" will load %cfg% and listen on port %port% UDP!
 echo To shut down the server close this window first!
 echo (%date%)  -  (%time%) %name% server start.
 
-cd C:\Users\decla\Desktop\Servers\BlackOps2Servers\Grubs
+cd YOUR_DIR_TO_LOCAL_APP_DATA
 :server
 start /wait /abovenormal bin\plutonium-bootstrapper-win32.exe t6zm "%gamepath%" -dedicated +set key %key% +set fs_game %mod% +set net_port %port% +exec %cfg% +map_rotate
 echo (%date%)  -  (%time%) WARNING: %name% server closed or dropped... server restarts.
